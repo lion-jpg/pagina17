@@ -1,0 +1,96 @@
+/* src/pages/arquitectura.css */
+
+body {
+    font-family: 'Arial', sans-serif; /* Fuente general */
+    background-color: #eef2f3; /* Color de fondo de la página */
+    margin: 0; /* Eliminar márgenes por defecto */
+}
+
+.arquitectura-container {
+    padding: 40px; /* Espaciado más amplio */
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 80px auto 0; /* Margen superior para evitar superposición con la navbar */
+}
+
+.arquitectura-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Diseño de cuadrícula */
+    gap: 30px; /* Espacio entre elementos */
+}
+
+.arquitectura-item {
+    display: flex; /* Usar flexbox para alinear la imagen y los datos */
+    align-items: center; /* Alinear verticalmente al centro */
+    background-color: #f9f9f9; /* Fondo gris claro para cada item */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    position: relative; /* Posicionamiento relativo para efectos */
+    overflow: hidden; /* Ocultar desbordamiento */
+    border: 1px solid #ddd; /* Borde sutil */
+}
+
+.arquitectura-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.arquitectura-item img {
+    width: 300px; /* Ancho fijo para todas las imágenes */
+    height: 200px; /* Alto fijo para todas las imágenes */
+    object-fit: cover; /* Mantener la proporción y recortar si es necesario */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    transition: transform 0.3s; /* Transición suave para la imagen */
+}
+
+.arquitectura-item img:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el mouse sobre la imagen */
+}
+
+h2 {
+    text-align: center; /* Centrar el título */
+    color: #333; /* Color del texto */
+    font-size: 2.5em; /* Tamaño de fuente más grande */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+h3 {
+    color: #007BFF; /* Color azul para los títulos de los items */
+    font-size: 1.5em; /* Tamaño de fuente para los subtítulos */
+    margin: 10px 0; /* Espacio arriba y abajo */
+}
+
+p {
+    color: #555; /* Color gris para el texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin: 5px 0; /* Espacio arriba y abajo */
+}
+
+/* Estilos para el contenedor de la imagen */
+.image-container {
+    position: relative; /* Posicionamiento relativo para el overlay */
+    margin-right: 20px; /* Espacio entre la imagen y los datos */
+}
+
+.image-container::after {
+    content: ''; /* Crear un pseudo-elemento */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 0; /* Alinear al top */
+    left: 0; /* Alinear a la izquierda */
+    right: 0; /* Alinear a la derecha */
+    bottom: 0; /* Alinear al fondo */
+    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro con transparencia */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s; /* Transición suave */
+}
+
+.arquitectura-item:hover .image-container::after {
+    opacity: 1; /* Mostrar el overlay al pasar el mouse */
+}
+
+.data-container {
+    flex: 1; /* Permitir que el contenedor de datos ocupe el espacio restante */
+}
